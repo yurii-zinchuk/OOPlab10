@@ -5,10 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-
-enum Country {
-    Ukraine, USA, Poland;
-}
+import java.time.LocalTime;
 
 @Getter
 @AllArgsConstructor
@@ -16,5 +13,5 @@ enum Country {
 public class FacebookUser extends User{
     private String email;
     private Country userCountry;
-    private LocalDate getUserActiveTime;
+    private LocalTime getUserActiveTime;
 }

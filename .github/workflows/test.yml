@@ -1,0 +1,23 @@
+name: Run Tests
+
+on:
+  push:
+  pull_request:
+    branches: main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set Up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: "18"
+          distribution: "adopt"
+
+      - name: Test With Maven
+        run: mvn --batch-mode --update-snapshots package
